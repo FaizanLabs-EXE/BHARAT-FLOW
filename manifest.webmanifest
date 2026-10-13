@@ -1,0 +1,15 @@
+{
+  "name":"BharatFlow AI — Private Life OS",
+  "short_name":"BharatFlow",
+  "description":"Offline-first AI, documents, tasks, money planning and local vault.",
+  "start_url":"./index.html",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#06101c",
+  "theme_color":"#07111f",
+  "orientation":"any",
+  "categories":["productivity","utilities","finance"],
+  "icons":[
+    {"src":"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='120' fill='%2307111f'/%3E%3Cpath d='M112 120h172c79 0 120 91 67 147 64 45 36 145-49 145H112z' fill='%2327e0c1'/%3E%3Cpath d='M192 190h83c31 0 31 48 0 48h-83zm0 91h103c34 0 34 52 0 52H192z' fill='%2307111f'/%3E%3C/svg%3E","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

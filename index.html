@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="BharatFlow AI is a private, offline-first productivity PWA for Indian households, students, workers and small businesses.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>BharatFlow AI</title>
+</head>
+<body>
+  <div class="aurora a1"></div><div class="aurora a2"></div>
+  <div id="toast" class="toast" role="status"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="logo">BF</div><div><b>BharatFlow</b><small>LOCAL-FIRST AI OS</small></div></div>
+      <nav id="nav">
+        <button class="nav active" data-tab="home">◫ <span>Command Center</span></button>
+        <button class="nav" data-tab="ai">✦ <span>AI Workspace</span></button>
+        <button class="nav" data-tab="studio">◩ <span>Document Studio</span></button>
+        <button class="nav" data-tab="money">₹ <span>Money Planner</span></button>
+        <button class="nav" data-tab="tasks">✓ <span>Smart Tasks</span></button>
+        <button class="nav" data-tab="vault">⬡ <span>Local Vault</span></button>
+        <button class="nav" data-tab="settings">⚙ <span>Settings</span></button>
+      </nav>
+      <div class="privacy-card"><span class="pulse"></span><b>Private by design</b><small>Data stays on this device</small></div>
+      <div class="signature">⟦ 𝐁𝐔𝐈𝐋𝐓 𝐁𝐘 𝐅𝐀𝐈𝐙𝐀𝐍 ⟧</div>
+    </aside>
+
+    <main>
+      <header>
+        <button id="menuBtn" class="icon-btn mobile">☰</button>
+        <div><h1 id="pageTitle">Command Center</h1><p id="today"></p></div>
+        <div class="header-actions"><span id="netBadge" class="badge">● Online</span><button id="installBtn" class="btn ghost hidden">Install App</button><button id="quickBtn" class="btn primary">＋ Quick Add</button></div>
+      </header>
+
+      <section class="tab active" id="home">
+        <div class="hero panel"><div><span class="eyebrow">ONE PRIVATE WORKSPACE</span><h2>Plan life. Draft faster.<br><em>Think with AI.</em></h2><p>A fast, installable toolkit for everyday Indian life, working offline for your saved data.</p><div class="row"><button class="btn primary" data-go="ai">Start with AI</button><button class="btn ghost" data-go="studio">Create a document</button></div></div><div class="hero-orb"><span>भारत</span><small>FLOW</small></div></div>
+        <div class="stat-grid"><article class="stat"><span>Open tasks</span><strong id="taskStat">0</strong><small>Stay on track</small></article><article class="stat"><span>This month</span><strong id="expenseStat">₹0</strong><small>Recorded expenses</small></article><article class="stat"><span>Saved notes</span><strong id="noteStat">0</strong><small>In local vault</small></article><article class="stat"><span>AI status</span><strong id="aiStat">Locked</strong><small>Your key, your control</small></article></div>
+        <div class="grid two"><div class="panel"><div class="section-head"><div><span class="eyebrow">AUTOMATION</span><h3>Suggested actions</h3></div></div><div id="suggestions" class="action-list"></div></div><div class="panel"><div class="section-head"><div><span class="eyebrow">TODAY</span><h3>Focus board</h3></div><button class="link" data-go="tasks">View tasks</button></div><div id="focusTasks" class="mini-list empty">No pending tasks. Add your first goal.</div></div></div>
+      </section>
+
+      <section class="tab" id="ai">
+        <div class="workspace-grid">
+          <div class="panel chat-panel"><div class="section-head"><div><span class="eyebrow">MULTI-MODEL</span><h3>AI Workspace</h3></div><div class="row compact"><select id="modelSelect"><option>Connect a key in Settings</option></select><button id="clearChat" class="icon-btn">↺</button></div></div><div class="chips"><button data-prompt="Explain this simply in Hindi and English: ">Explain</button><button data-prompt="Create a practical step-by-step plan for: ">Plan</button><button data-prompt="Draft a professional application in Indian English for: ">Draft</button><button data-prompt="Compare options with pros, cons and a recommendation: ">Compare</button></div><div id="chat" class="chat"><div class="message assistant"><div class="avatar">✦</div><div><b>BharatFlow AI</b><p>Namaste! Add your OpenRouter key in Settings, choose a model, and ask me anything useful.</p></div></div></div><form id="chatForm" class="composer"><textarea id="chatInput" rows="2" placeholder="Ask, draft, translate or plan..."></textarea><div class="composer-actions"><button type="button" id="voiceBtn" class="icon-btn" title="Voice input">◉</button><label class="toggle"><input id="autoRoute" type="checkbox" checked><span>Auto fallback</span></label><button class="btn primary" type="submit">Send ↗</button></div></form></div>
+          <aside class="panel side-card"><span class="eyebrow">PROMPT PROFILES</span><h3>Choose a role</h3><div id="roles" class="role-list"></div><hr><h3>Session tools</h3><button id="exportChat" class="wide-btn">Export conversation</button><button id="saveChat" class="wide-btn">Save to vault</button><p class="fine">AI output can be inaccurate. Verify important financial, legal, medical and government information from official sources.</p></aside>
+        </div>
+      </section>
+
+      <section class="tab" id="studio">
+        <div class="grid studio-grid"><div class="panel"><span class="eyebrow">SMART DRAFTING</span><h3>Document Studio</h3><div class="template-grid" id="templates"></div><label>Purpose / details<textarea id="docContext" rows="5" placeholder="Example: Request 3 days leave for a family event..."></textarea></label><div class="row"><button id="generateDoc" class="btn primary">Generate draft</button><button id="copyDoc" class="btn ghost">Copy</button><button id="downloadDoc" class="btn ghost">Download .txt</button></div></div><div class="panel paper"><div class="paper-top"><b id="docTitle">Preview</b><span>LOCAL DRAFT</span></div><textarea id="docOutput" aria-label="Generated document" placeholder="Your document will appear here..."></textarea></div></div>
+      </section>
+
+      <section class="tab" id="money"><div class="grid two"><div class="panel"><span class="eyebrow">MONTHLY VIEW</span><h3>Money Planner</h3><form id="expenseForm" class="form-grid"><input id="expenseName" required placeholder="Expense name"><input id="expenseAmount" required min="0" step="0.01" type="number" placeholder="Amount ₹"><select id="expenseCategory"><option>Food</option><option>Travel</option><option>Bills</option><option>Education</option><option>Health</option><option>Shopping</option><option>Business</option><option>Other</option></select><input id="expenseDate" required type="date"><button class="btn primary" type="submit">Add expense</button></form><div id="budgetSummary" class="budget-summary"></div></div><div class="panel"><div class="section-head"><div><span class="eyebrow">LEDGER</span><h3>Recent expenses</h3></div><button id="exportExpenses" class="link">Export CSV</button></div><div id="expenseList" class="ledger empty">No expenses recorded.</div></div></div></section>
+
+      <section class="tab" id="tasks"><div class="panel"><div class="section-head"><div><span class="eyebrow">SMART CHECKLIST</span><h3>Tasks & routines</h3></div><select id="taskFilter"><option value="all">All</option><option value="open">Open</option><option value="done">Completed</option></select></div><form id="taskForm" class="task-entry"><input id="taskName" required placeholder="What needs to be done?"><input id="taskDue" type="datetime-local"><select id="taskPriority"><option>Medium</option><option>High</option><option>Low</option></select><button class="btn primary">Add task</button></form><div id="taskList" class="task-list"></div></div></section>
+
+      <section class="tab" id="vault"><div class="panel"><div class="section-head"><div><span class="eyebrow">INDEXEDDB</span><h3>Local Vault</h3></div><button id="newNote" class="btn primary">＋ New note</button></div><input id="vaultSearch" class="search" placeholder="Search saved notes and AI sessions..."><div id="noteGrid" class="note-grid"></div></div></section>
+
+      <section class="tab" id="settings"><div class="settings-grid"><div class="panel"><span class="eyebrow">AI CONNECTION</span><h3>OpenRouter</h3><label>API key<div class="input-action"><input id="apiKey" type="password" autocomplete="off" placeholder="sk-or-v1-..."><button id="toggleKey" class="icon-btn">◉</button></div></label><p class="fine">Stored only in this browser. For better safety, use a restricted key with a spending limit.</p><div class="row"><button id="saveKey" class="btn primary">Save & load models</button><button id="removeKey" class="btn danger">Remove key</button></div><label>Preferred models<select id="preferredModels" multiple size="6"></select></label></div><div class="panel"><span class="eyebrow">APP & DATA</span><h3>Preferences</h3><label>Language<select id="language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="mr">मराठी</option></select></label><label>Monthly budget (₹)<input id="monthlyBudget" type="number" min="0" placeholder="25000"></label><label class="toggle line"><input id="notifications" type="checkbox"><span>Task notifications while app is open</span></label><div class="stack"><button id="exportAll" class="wide-btn">Export all local data</button><label class="wide-btn file">Import backup<input id="importAll" type="file" accept="application/json"></label><button id="wipeAll" class="wide-btn danger-text">Erase all local data</button></div></div><div class="panel about"><span class="eyebrow">ABOUT</span><h3>BharatFlow AI</h3><p>Built after reviewing Faizan Labs' focus on AI, automation, GitHub utilities and polished static apps.</p><ul><li>No account required</li><li>No app server</li><li>Offline shell</li><li>Local IndexedDB storage</li><li>Installable PWA</li></ul><div class="signature big">⟦ 𝐁𝐔𝐈𝐋𝐓 𝐁𝐘 𝐅𝐀𝐈𝐙𝐀𝐍 ⟧</div></div></div></section>
+    </main>
+  </div>
+
+  <dialog id="quickDialog"><form method="dialog" class="modal"><div class="section-head"><h3>Quick capture</h3><button class="icon-btn" value="cancel">×</button></div><input id="quickText" placeholder="Task or note..."><div class="row"><button id="quickTask" type="button" class="btn primary">Save as task</button><button id="quickNote" type="button" class="btn ghost">Save as note</button></div></form></dialog>
+  <dialog id="noteDialog"><form method="dialog" class="modal"><div class="section-head"><h3>Vault note</h3><button class="icon-btn" value="cancel">×</button></div><input id="noteTitle" placeholder="Title"><textarea id="noteBody" rows="9" placeholder="Write anything private..."></textarea><button id="saveNote" type="button" class="btn primary">Save note</button></form></dialog>
+  <script src="db.js"></script><script src="app.js"></script>
+</body>
+</html>
