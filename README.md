@@ -22,13 +22,6 @@ The profile and repositories show a clear pattern: static HTML apps, AI integrat
 - Installable PWA with offline app shell
 - No framework, build tool, account or app server
 
-## Deploy on GitHub Pages
-
-1. Create a public GitHub repository.
-2. Upload all seven files to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-5. Open the published URL and use **Install App** when your browser offers it.
 
 ## OpenRouter setup
 
@@ -46,16 +39,6 @@ The key is stored in this browser's IndexedDB and is sent directly from the brow
 - AI requests require internet access, a valid user-supplied key and an available model. Saved data and the app shell work offline.
 - Browser notifications in this build are checked while the app is open. Reliable background schedules require a backend or native platform service.
 - AI output may be inaccurate. Verify financial, legal, medical and government information using official sources.
-
-## Seven files
-
-- `index.html`
-- `styles.css`
-- `app.js`
-- `db.js`
-- `manifest.webmanifest`
-- `sw.js`
-- `README.md`
 
 ## License
 
